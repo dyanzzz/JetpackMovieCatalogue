@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Jetpack Movie Catalogue</string>
+    <string name="detail">Detail</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="date">Date</string>
+    <string name="movie">Movie</string>
+    <string name="tv_show">TV Show</string>
+    <string name="share_title">Bagikan aplikasi ini sekarang.</string>
+    <string name="share_content">Saksikan segera film %s di bioskop kesayangan anda.</string>
+</resources>
