@@ -15,7 +15,7 @@
   * Menerapkan instrumentation test untuk memastikan fitur-fitur yang ada berjalan dengan semestinya.
   * Tuliskan skenario instrumentation test pada kolom Catatan ketika Anda ingin mengumpulkan tugas ini. Untuk format penulisan skenario pengujian, Anda bisa melihat contoh di modul [Proyek Academy : Pengujian ViewModel](https://www.dicoding.com/academies/129/tutorials/4454 "Proyek Academy : Pengujian ViewModel").
   
-## Instrumental Testing pada Main Activity, hanya detail activity, testing hanya fragment movie & testing hanya  fragment tv show : ##
+### Instrumental Testing : ###
 ---------------
 * Menampilkan data movie
   * Memastikan __rv_movie__ dalam keadaan tampil.
