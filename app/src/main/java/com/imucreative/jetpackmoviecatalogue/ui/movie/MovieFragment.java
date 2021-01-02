@@ -17,8 +17,7 @@ import android.widget.Toast;
 import com.imucreative.jetpackmoviecatalogue.R;
 import com.imucreative.jetpackmoviecatalogue.data.MovieEntity;
 import com.imucreative.jetpackmoviecatalogue.databinding.FragmentMovieBinding;
-
-import java.util.List;
+import com.imucreative.jetpackmoviecatalogue.viewmodel.ViewModelFactory;
 
 public class MovieFragment extends Fragment implements MovieFragmentCallback{
 
@@ -34,11 +33,17 @@ public class MovieFragment extends Fragment implements MovieFragmentCallback{
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         if (getActivity() != null) {
-            MovieViewModel viewModel = new ViewModelProvider(this, new ViewModelProvider.NewInstanceFactory()).get(MovieViewModel.class);
-            List<MovieEntity> movies = viewModel.getMovies();
+            ViewModelFactory factory = ViewModelFactory.getInstance(getActivity());
+            MovieViewModel viewModel = new ViewModelProvider(this, factory).get(MovieViewModel.class);
 
             MovieAdapter movieAdapter = new MovieAdapter(this);
-            movieAdapter.setMovies(movies);
+
+            fragmentMovieBinding.progressBar.setVisibility(View.VISIBLE);
+            viewModel.getMovies().observe(getViewLifecycleOwner(), courses -> {
+                fragmentMovieBinding.progressBar.setVisibility(View.GONE);
+                movieAdapter.setMovies(courses);
+                movieAdapter.notifyDataSetChanged();
+            });
 
             fragmentMovieBinding.rvMovie.setLayoutManager(new LinearLayoutManager(getContext()));
             fragmentMovieBinding.rvMovie.setHasFixedSize(true);

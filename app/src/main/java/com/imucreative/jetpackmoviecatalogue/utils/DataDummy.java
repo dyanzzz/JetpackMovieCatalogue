@@ -9,153 +9,168 @@ public class DataDummy {
 
     public static String[][] data = new String[][]{
         {
-            "mv1",
-            "A Star Is Born",
-            "3 October 2018",
+            "464052",
+            "Wonder Woman 1984",
+            "2020-12-16",
             "movie",
-            "Seasoned musician Jackson Maine discovers — and falls in love with — struggling artist Ally. She has just about given up on her dream to make it big as a singer — until Jack coaxes her into the spotlight. But even as Ally's career takes off, the personal side of their relationship is breaking down, as Jack fights an ongoing battle with his own internal demons.",
-            "https://image.tmdb.org/t/p/w1280/wrFpXMNBRj2PBiN4Z5kix51XaIZ.jpg"
+            "Wonder Woman comes into conflict with the Soviet Union during the Cold War in the 1980s and finds a formidable foe by the name of the Cheetah.",
+            "/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",
         }, {
-            "mv2",
-            "Alita: Battle Angel",
-            "31 January 2019",
+            "529203",
+            "The Croods: A New Age",
+            "2020-11-25",
             "movie",
-            "When Alita awakens with no memory of who she is in a future world she does not recognize, she is taken in by Ido, a compassionate doctor who realizes that somewhere in this abandoned cyborg shell is the heart and soul of a young woman with an extraordinary past.",
-            "https://image.tmdb.org/t/p/w1280/xRWht48C2V8XNfzvPehyClOvDni.jpg"
+            "Searching for a safer habitat, the prehistoric Crood family discovers an idyllic, walled-in paradise that meets all of its needs. Unfortunately, they must also learn to live with the Bettermans -- a family that's a couple of steps above the Croods on the evolutionary ladder. As tensions between the new neighbors start to rise, a new threat soon propels both clans on an epic adventure that forces them to embrace their differences, draw strength from one another, and survive together.",
+            "/tK1zy5BsCt1J4OzoDicXmr0UTFH.jpg",
+            "/srYya1ZlI97Au4jUYAktDe3avyA.jpg"
         }, {
-            "mv3",
-            "Aquaman",
-            "7 December 2018",
+            "733317",
+            "Monsters of Man",
+            "2020-11-19",
             "movie",
-            "Once home to the most advanced civilization on Earth, Atlantis is now an underwater kingdom ruled by the power-hungry King Orm. With a vast army at his disposal, Orm plans to conquer the remaining oceanic people and then the surface world. Standing in his way is Arthur Curry, Orm's half-human, half-Atlantean brother and true heir to the throne.",
-            "https://image.tmdb.org/t/p/w1280/5Kg76ldv7VxeX9YlcQXiowHgdX6.jpg"
+            "A robotics company vying to win a lucrative military contract team up with a corrupt CIA agent to conduct an illegal live field test. They deploy four weaponized prototype robots into a suspected drug manufacturing camp in the Golden Triangle, assuming they'd be killing drug runners that no one would miss. Six doctors on a humanitarian mission witness the brutal slaughter and become prime targets.",
+            "/1f3qspv64L5FXrRy0MF8X92ieuw.jpg",
         }, {
-            "mv4",
-            "Bohemian Rhapsody",
-            "24 October 2018",
+            "553604",
+            "Honest Thief",
+            "2020-09-03",
             "movie",
-            "Singer Freddie Mercury, guitarist Brian May, drummer Roger Taylor and bass guitarist John Deacon take the music world by storm when they form the rock 'n' roll band Queen in 1970. Hit songs become instant classics. When Mercury's increasingly wild lifestyle starts to spiral out of control, Queen soon faces its greatest challenge yet – finding a way to keep the band together amid the success and excess.",
-            "https://image.tmdb.org/t/p/w1280/lHu1wtNaczFPGFDTrjCSzeLPTKN.jpg"
+            "A bank robber tries to turn himself in because he's falling in love and wants to live an honest life...but when he realizes the Feds are more corrupt than him, he must fight back to clear his name.",
+            "/zeD4PabP6099gpE0STWJrJrCBCs.jpg",
         }, {
-            "mv5",
-            "Cold Pursuit",
-            "2 February 2019",
+            "508442",
+            "Soul",
+            "2020-12-25",
             "movie",
-            "The quiet family life of Nels Coxman, a snowplow driver, is upended after his son's murder. Nels begins a vengeful hunt for Viking, the drug lord he holds responsible for the killing, eliminating Viking's associates one by one. As Nels draws closer to Viking, his actions bring even more unexpected and violent consequences, as he proves that revenge is all in the execution.",
-            "https://image.tmdb.org/t/p/w1280/cO802woIgZsLbOWPUSsleobKyDp.jpg"
+            "Joe Gardner is a middle school teacher with a love for jazz music. After a successful gig at the Half Note Club, he suddenly gets into an accident that separates his soul from his body and is transported to the You Seminar, a center in which souls develop and gain passions before being transported to a newborn child. Joe must enlist help from the other souls-in-training, like 22, a soul who has spent eons in the You Seminar, in order to get back to Earth.",
+            "/zSuRX1VmT0PwuHVV7zl4n1mwdL0.jpg"
         }, {
-            "mv6",
-            "Creed",
-            "25 November 2015",
+            "577922",
+            "Tenet",
+            "2020-08-22",
             "movie",
-            "The former World Heavyweight Champion Rocky Balboa serves as a trainer and mentor to Adonis Johnson, the son of his late friend and former rival Apollo Creed.",
-            "https://image.tmdb.org/t/p/w1280/iBq4od6j1ZAvDVO7hwmHT2Xf2Bt.jpg"
+            "Armed with only one word - Tenet - and fighting for the survival of the entire world, the Protagonist journeys through a twilight world of international espionage on a mission that will unfold in something beyond real time.",
+            "/k68nPLbIST6NP96JmTxmZijEvCA.jpg"
         }, {
-            "mv7",
-            "Fantastic Beasts: The Crimes of Grindelwald",
-            "16 November 2018",
+            "524047",
+            "Greenland",
+            "2020-07-29",
             "movie",
-            "Gellert Grindelwald has escaped imprisonment and has begun gathering followers to his cause—elevating wizards above all non-magical beings. The only one capable of putting a stop to him is the wizard he once called his closest friend, Albus Dumbledore. However, Dumbledore will need to seek help from the wizard who had thwarted Grindelwald once before, his former student Newt Scamander, who agrees to help, unaware of the dangers that lie ahead. Lines are drawn as love and loyalty are tested, even among the truest friends and family, in an increasingly divided wizarding world.",
-            "https://image.tmdb.org/t/p/w1280/fMMrl8fD9gRCFJvsx0SuFwkEOop.jpg"
+            "John Garrity, his estranged wife and their young son embark on a perilous journey to find sanctuary as a planet-killing comet hurtles toward Earth. Amid terrifying accounts of cities getting levelled, the Garrity's experience the best and worst in humanity. As the countdown to the global apocalypse approaches zero, their incredible trek culminates in a desperate and last-minute flight to a possible safe haven.",
+            "/bNo2mcvSwIvnx8K6y1euAc1TLVq.jpg"
         }, {
-            "mv8",
-            "Glass",
-            "16 January 2019",
+            "590706",
+            "Jiu Jitsu",
+            "2020-11-20",
             "movie",
-            "In a series of escalating encounters, former security guard David Dunn uses his supernatural abilities to track Kevin Wendell Crumb, a disturbed man who has twenty-four personalities. Meanwhile, the shadowy presence of Elijah Price emerges as an orchestrator who holds secrets critical to both men.",
-            "https://image.tmdb.org/t/p/w1280/svIDTNUoajS8dLEo7EosxvyAsgJ.jpg"
+            "Every six years, an ancient order of jiu-jitsu fighters joins forces to battle a vicious race of alien invaders. But when a celebrated war hero goes down in defeat, the fate of the planet and mankind hangs in the balance.",
+            "/eLT8Cu357VOwBVTitkmlDEg32Fs.jpg"
         }, {
-            "mv9",
-            "How to Train Your Dragon: The Hidden World",
-            "3 January 2019",
+            "646593",
+            "Wander",
+            "2020-12-04",
             "movie",
-            "As Hiccup fulfills his dream of creating a peaceful dragon utopia, Toothless’ discovery of an untamed, elusive mate draws the Night Fury away. When danger mounts at home and Hiccup’s reign as village chief is tested, both dragon and rider must make impossible decisions to save their kind.",
-            "https://image.tmdb.org/t/p/w1280/xvx4Yhf0DVH8G4LzNISpMfFBDy2.jpg"
+            "After getting hired to probe a suspicious death in the small town of Wander, a mentally unstable private investigator becomes convinced the case is linked to the same 'conspiracy cover up' that caused the death of his daughter.",
+            "/2AwPvNHphpZBJDqjZKVuMAbvS0v.jpg"
         }, {
-            "mv10",
-            "Avengers: Infinity War",
-            "25 April 2018",
+            "602211",
+            "Fatman",
+            "2020-11-13",
             "movie",
-            "As the Avengers and their allies have continued to protect the world from threats too large for any one hero to handle, a new danger has emerged from the cosmic shadows: Thanos. A despot of intergalactic infamy, his goal is to collect all six Infinity Stones, artifacts of unimaginable power, and use them to inflict his twisted will on all of reality. Everything the Avengers have fought for has led up to this moment - the fate of Earth and existence itself has never been more uncertain.",
-            "https://image.tmdb.org/t/p/w1280/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg"
+            "A rowdy, unorthodox Santa Claus is fighting to save his declining business. Meanwhile, Billy, a neglected and precocious 12 year old, hires a hit man to kill Santa after receiving a lump of coal in his stocking",
+            "/4n8QNNdk4BOX9Dslfbz5Dy6j1HK.jpg"
         }, {
-            "mv11",
-            "Master Z: Ip Man Legacy",
-            "20 December 2018",
+            "648371",
+            "No Good Deed",
+            "2020-03-13",
             "movie",
-            "Following his defeat by Master Ip, Cheung Tin Chi (Zhang) tries to make a life with his young son in Hong Kong, waiting tables at a bar that caters to expats. But it s not long before the mix of foreigners, money, and triad leaders draw him once again to the fight.",
-            "https://image.tmdb.org/t/p/w1280/6VxEvOF7QDovsG6ro9OVyjH07LF.jpg"
+            "Karen never planned on being a hero. A recent widow, she has her hands full with work and parenting her son Max. Then Karen saves Jeremy's life during a drug store robbery and quickly discovers that the young man is intent on paying her back at any cost. At first, life starts improving for this good Samaritan, but as Jeremy's efforts become more extreme, Karen starts to wonder if no good deed truly goes unpunished.",
+            "/27BnREBR5rcMrUVUhV5bTXlcCym.jpg"
         }, {
-            "tv1",
-            "Arrow",
-            "10 October 2012",
+            "554585",
+            "Sin origen",
+            "2020-10-25",
+            "movie",
+            "A group of arcanes enjoy fighting vampires.",
+            "/77lI0btz8qkExY13MKXaPrf4cA6.jpg"
+        }, {
+            "82856",
+            "The Mandalorian",
+            "2019-11-12",
             "tv",
-            "Spoiled billionaire playboy Oliver Queen is missing and presumed dead when his yacht is lost at sea. He returns five years later a changed man, determined to clean up the city as a hooded vigilante armed with a bow.",
-            "https://image.tmdb.org/t/p/w1280/gKG5QGz5Ngf8fgWpBsWtlg5L2SF.jpg"
+            "After the fall of the Galactic Empire, lawlessness has spread throughout the galaxy. A lone gunfighter makes his way through the outer reaches, earning his keep as a bounty hunter.",
+            "/sWgBv7LV2PRoQgkxwlibdGXKz1S.jpg"
         }, {
-            "tv2",
-            "Doom Patrol",
-            "15 February 2019",
+            "71712",
+            "The Good Doctor",
+            "2017-09-25",
             "tv",
-            "The Doom Patrol’s members each suffered horrible accidents that gave them superhuman abilities — but also left them scarred and disfigured. Traumatized and downtrodden, the team found purpose through The Chief, who brought them together to investigate the weirdest phenomena in existence — and to protect Earth from what they find.",
-            "https://image.tmdb.org/t/p/w1280/drlfSCIlMKrEeMPhi8pqY4xGxj.jpg"
+            "A young surgeon with Savant syndrome is recruited into the surgical unit of a prestigious hospital. The question will arise: can a person who doesn't have the ability to relate to people actually save their lives?",
+            "/6tfT03sGp9k4c0J3dypjrI8TSAI.jpg"
         }, {
-            "tv3",
-            "Dragon Ball",
-            "26 February 1989",
-            "tv",
-            "Long ago in the mountains, a fighting master known as Gohan discovered a strange boy whom he named Goku. Gohan raised him and trained Goku in martial arts until he died. The young and very strong boy was on his own, but easily managed. Then one day, Goku met a teenage girl named Bulma, whose search for the dragon balls brought her to Goku's home. Together, they set off to find all seven dragon balls in an adventure.",
-            "https://image.tmdb.org/t/p/w1280/tZ0jXOeYBWPZ0OWzUhTlYvMF7YR.jpg"
-        }, {
-            "tv4",
-            "Fairy Tail",
-            "12 February 2019",
-            "tv",
-            "Lucy is a 17-year-old girl, who wants to be a full-fledged mage. One day when visiting Harujion Town, she meets Natsu, a young man who gets sick easily by any type of transportation. But Natsu isn't just any ordinary kid, he's a member of one of the world's most infamous mage guilds: Fairy Tail.",
-            "https://image.tmdb.org/t/p/w1280/5QHj5lrF86pEbeCV9r9tsTPWYy5.jpg"
-        }, {
-            "tv5",
-            "Family Guy",
-            "31 February 1999",
-            "tv",
-            "Sick, twisted, politically incorrect and Freakin' Sweet animated series featuring the adventures of the dysfunctional Griffin family. Bumbling Peter and long-suffering Lois have three kids. Stewie (a brilliant but sadistic baby bent on killing his mother and taking over the world), Meg (the oldest, and is the most unpopular girl in town) and Chris (the middle kid, he's not very bright but has a passion for movies). The final member of the family is Brian - a talking dog and much more than a pet, he keeps Stewie in check whilst sipping Martinis and sorting through his own life issues.",
-            "https://image.tmdb.org/t/p/w1280/qlClTwL0GSGZUH7xwJU5PER5wnJ.jpg"
-        }, {
-            "tv6",
-            "The Flash",
-            "7 October 2004",
-            "tv",
-            "After a particle accelerator causes a freak storm, CSI Investigator Barry Allen is struck by lightning and falls into a coma. Months later he awakens with the power of super speed, granting him the ability to move through Central City like an unseen guardian angel. Though initially excited by his newfound powers, Barry is shocked to discover he is not the only \"meta-human\" who was created in the wake of the accelerator explosion -- and not everyone is using their new powers for good. Barry partners with S.T.A.R. Labs and dedicates his life to protect the innocent. For now, only a few close friends and associates know that Barry is literally the fastest man alive, but it won't be long before the world learns what Barry Allen has become...The Flash.",
-            "https://image.tmdb.org/t/p/w1280/wHa6KOJAoNTFLFtp7wguUJKSnju.jpg"
-        }, {
-            "tv7",
-            "Lambs of God",
-            "21 July 2019",
-            "tv",
-            "A dark, gothic tale about three nuns, each a generation apart, living in an isolated convent by the coast, and an unwelcome visitor who enters their lives and changes their world forever.",
-            "https://image.tmdb.org/t/p/w1280/7EdevpTHAoizlEHVATfvgurFsaY.jpg"
-        }, {
-            "tv8",
-            "Gotham",
-            "22 September 2014",
-            "tv",
-            "Before there was Batman, there was GOTHAM. Everyone knows the name Commissioner Gordon. He is one of the crime world's greatest foes, a man whose reputation is synonymous with law and order. But what is known of Gordon's story and his rise from rookie detective to Police Commissioner? What did it take to navigate the multiple layers of corruption that secretly ruled Gotham City, the spawning ground of the world's most iconic villains? And what circumstances created them – the larger-than-life personas who would become Catwoman, The Penguin, The Riddler, Two-Face and The Joker?.",
-            "https://image.tmdb.org/t/p/w1280/4XddcRDtnNjYmLRMYpbrhFxsbuq.jpg"
-        }, {
-            "tv9",
+            "1416",
             "Grey's Anatomy",
-            "27 March 2005",
+            "2005-03-27",
             "tv",
             "Follows the personal and professional lives of a group of doctors at Seattle’s Grey Sloan Memorial Hospital.",
-            "https://image.tmdb.org/t/p/w1280/clnyhPqj1SNgpAdeSS6a6fwE6Bo.jpg"
+            "/clnyhPqj1SNgpAdeSS6a6fwE6Bo.jpg"
         }, {
-            "tv10",
-            "Hanna",
-            "28 March 2019",
+            "63174",
+            "Lucifer",
+            "2016-01-25",
             "tv",
-            "This thriller and coming-of-age drama follows the journey of an extraordinary young girl as she evades the relentless pursuit of an off-book CIA agent and tries to unearth the truth behind who she is. Based on the 2011 Joe Wright film.",
-            "https://image.tmdb.org/t/p/w1280/iYUtjx1EN4SVTgxd2TB4cZTGSQb.jpg"
-        },
+            "Bored and unhappy as the Lord of Hell, Lucifer Morningstar abandoned his throne and retired to Los Angeles, where he has teamed up with LAPD detective Chloe Decker to take down criminals. But the longer he's away from the underworld, the greater the threat that the worst of humanity could escape.",
+            "/4EYPN5mVIhKLfxGruy7Dy41dTVn.jpg"
+        }, {
+            "63174",
+            "Lucifer",
+            "2016-01-25",
+            "tv",
+            "Bored and unhappy as the Lord of Hell, Lucifer Morningstar abandoned his throne and retired to Los Angeles, where he has teamed up with LAPD detective Chloe Decker to take down criminals. But the longer he's away from the underworld, the greater the threat that the worst of humanity could escape.",
+            "/4EYPN5mVIhKLfxGruy7Dy41dTVn.jpg"
+        }, {
+            "97180",
+            "Selena: The Series",
+            "2020-12-04",
+            "tv",
+            "As Mexican-American Tejano singer Selena comes of age and realizes her dreams, she and her family make tough choices to hold on to love and music.",
+            "/mYsWyfiIMxx4HDm0Wck7oJ9ckez.jpg"
+        }, {
+            "69050",
+            "Riverdale",
+            "2017-01-26",
+            "tv",
+            "Set in the present, the series offers a bold, subversive take on Archie, Betty, Veronica and their friends, exploring the surreality of small-town life, the darkness and weirdness bubbling beneath Riverdale’s wholesome facade.",
+            "/4X7o1ssOEvp4BFLim1AZmPNcYbU.jpg"
+        }, {
+            "75006",
+            "The Umbrella Academy",
+            "2019-02-15",
+            "tv",
+            "A dysfunctional family of superheroes comes together to solve the mystery of their father's death, the threat of the apocalypse and more.",
+            "/scZlQQYnDVlnpxFTxaIv2g0BWnL.jpg"
+        }, {
+            "89844",
+            "30 Coins",
+            "2020-11-29",
+            "tv",
+            "Father Vergara—an exorcist, boxer and ex-convict—lives in a remote village in Spain. Hoping to be lost and forgotten, Vergara’s demons catch up to him.",
+            "/lw70w94nzCmIVSQvtMcuAjWHfWX.jpg"
+        }, {
+            "68507",
+            "His Dark Materials",
+            "2019-11-03",
+            "tv",
+            "Lyra is an orphan who lives in a parallel universe in which science, theology and magic are entwined. Lyra's search for a kidnapped friend uncovers a sinister plot involving stolen children, and turns into a quest to understand a mysterious phenomenon called Dust. She is later joined on her journey by Will, a boy who possesses a knife that can cut windows between worlds. As Lyra learns the truth about her parents and her prophesied destiny, the two young people are caught up in a war against celestial powers that ranges across many worlds.",
+            "/g6tIKGc3f1H5QMz1dcgCwADKpZ7.jpg"
+        }, {
+            "87739",
+            "The Queen's Gambit",
+            "2020-10-23",
+            "tv",
+            "In a Kentucky orphanage in the 1950s, a young girl discovers an astonishing talent for chess while struggling with addiction.",
+            "/zU0htwkhNvBQdVSIKB9s6hgVeFK.jpg"
+        }
 
     };
 
@@ -164,7 +179,7 @@ public class DataDummy {
         for (String[] aData : data) {
             if(aData[3].equals(category)) {
                 MovieEntity courseEntity = new MovieEntity();
-                courseEntity.setMovieId(aData[0]);
+                courseEntity.setMovieId(Integer.parseInt(aData[0]));
                 courseEntity.setTitle(aData[1]);
                 courseEntity.setDate(aData[2]);
                 courseEntity.setTvShow(aData[3]);

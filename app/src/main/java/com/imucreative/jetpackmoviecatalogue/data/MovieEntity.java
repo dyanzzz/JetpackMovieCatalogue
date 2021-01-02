@@ -4,29 +4,44 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class MovieEntity implements Parcelable {
-    private String movieId;
+    private int movieId;
     private String title;
     private String description;
     private String date;
     private String tvShow;
     private String imagePath;
+    private String imageBackdropPath;
+    private int voteCount;
 
     public MovieEntity() {
     }
 
     protected MovieEntity(Parcel in) {
-        this.movieId = in.readString();
+        this.movieId = in.readInt();
         this.title = in.readString();
         this.description = in.readString();
         this.date = in.readString();
         this.tvShow = in.readString();
         this.imagePath = in.readString();
+        this.imageBackdropPath = in.readString();
+        this.voteCount = in.readInt();
     }
 
-    public String getMovieId() {
+    public MovieEntity(int movieId, String title, String description, String date, String tvShow, String imagePath, String imageBackdropPath, int voteCount) {
+        this.movieId = movieId;
+        this.title = title;
+        this.description = description;
+        this.date = date;
+        this.tvShow = tvShow;
+        this.imagePath = imagePath;
+        this.imageBackdropPath = imageBackdropPath;
+        this.voteCount = voteCount;
+    }
+
+    public int getMovieId() {
         return movieId;
     }
-    public void setMovieId(String movieId) {
+    public void setMovieId(int movieId) {
         this.movieId = movieId;
     }
 
@@ -65,6 +80,20 @@ public class MovieEntity implements Parcelable {
         this.imagePath = imagePath;
     }
 
+    public String getImageBackdropPath() {
+        return imageBackdropPath;
+    }
+    public void setImageBackdropPath(String imageBackdropPath) {
+        this.imageBackdropPath = imageBackdropPath;
+    }
+
+    public int getVoteCount() {
+        return voteCount;
+    }
+    public void setVoteCount(int voteCount) {
+        this.voteCount = voteCount;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -72,12 +101,14 @@ public class MovieEntity implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(this.movieId);
+        dest.writeInt(this.movieId);
         dest.writeString(this.title);
         dest.writeString(this.description);
         dest.writeString(this.date);
         dest.writeString(this.tvShow);
         dest.writeString(this.imagePath);
+        dest.writeString(this.imageBackdropPath);
+        dest.writeInt(this.voteCount);
     }
 
     public static final Parcelable.Creator<MovieEntity> CREATOR = new Parcelable.Creator<MovieEntity>() {

@@ -1,6 +1,7 @@
 package com.imucreative.jetpackmoviecatalogue.ui.main;
 
 import androidx.test.core.app.ActivityScenario;
+import androidx.test.espresso.IdlingRegistry;
 import androidx.test.espresso.contrib.RecyclerViewActions;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.rules.*;
@@ -9,7 +10,9 @@ import androidx.test.rule.ActivityTestRule;
 import com.imucreative.jetpackmoviecatalogue.R;
 import com.imucreative.jetpackmoviecatalogue.data.MovieEntity;
 import com.imucreative.jetpackmoviecatalogue.utils.DataDummy;
+import com.imucreative.jetpackmoviecatalogue.utils.EspressoIdlingResource;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -29,6 +32,17 @@ public class MainActivityTest {
     private List<MovieEntity> dummyMovie = DataDummy.getListData("movie");
     private List<MovieEntity> dummyTvShow = DataDummy.getListData("tv");
 
+    @Before
+    public void setup() {
+        ActivityScenario.launch(MainActivity.class);
+        IdlingRegistry.getInstance().register(EspressoIdlingResource.getEspressoIdlingResource());
+    }
+
+    @After
+    public void tearDown() {
+        IdlingRegistry.getInstance().unregister(EspressoIdlingResource.getEspressoIdlingResource());
+    }
+
     @Rule
     public ActivityTestRule activityRule = new ActivityTestRule(MainActivity.class);
 
@@ -45,8 +59,12 @@ public class MainActivityTest {
         onView(allOf(withId(R.id.text_title), withText(dummyMovie.get(0).getTitle())));
         onView(allOf(withId(R.id.text_date), isDisplayed()));
         onView(allOf(withId(R.id.text_date), withText(String.format("Date Release Movie %s", dummyMovie.get(0).getDate()))));
-        onView(allOf(withId(R.id.text_description), isDisplayed()));
-        onView(allOf(withId(R.id.text_description), withText(dummyMovie.get(0).getDescription())));
+        onView(allOf(withId(R.id.text_voters_detail), isDisplayed()));
+        onView(allOf(withId(R.id.text_voters_detail), withText(dummyMovie.get(0).getVoteCount())));
+        onView(allOf(withId(R.id.txt_description), isDisplayed()));
+        onView(allOf(withId(R.id.txt_description), withText(dummyMovie.get(0).getDescription())));
+        onView(allOf(withId(R.id.img_poster), isDisplayed()));
+        onView(allOf(withId(R.id.img_backdrop), isDisplayed()));
     }
 
     @Test
@@ -64,8 +82,12 @@ public class MainActivityTest {
         onView(allOf(withId(R.id.text_title), withText(dummyTvShow.get(0).getTitle())));
         onView(allOf(withId(R.id.text_date), isDisplayed()));
         onView(allOf(withId(R.id.text_date), withText(String.format("Date Release TV Show %s", dummyTvShow.get(0).getDate()))));
-        onView(allOf(withId(R.id.text_description), isDisplayed()));
-        onView(allOf(withId(R.id.text_description), withText(dummyTvShow.get(0).getDescription())));
+        onView(allOf(withId(R.id.text_voters_detail), isDisplayed()));
+        onView(allOf(withId(R.id.text_voters_detail), withText(dummyMovie.get(0).getVoteCount())));
+        onView(allOf(withId(R.id.txt_description), isDisplayed()));
+        onView(allOf(withId(R.id.txt_description), withText(dummyMovie.get(0).getDescription())));
+        onView(allOf(withId(R.id.img_poster), isDisplayed()));
+        onView(allOf(withId(R.id.img_backdrop), isDisplayed()));
     }
 
 }

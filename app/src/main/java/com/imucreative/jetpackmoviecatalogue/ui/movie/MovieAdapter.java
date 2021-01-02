@@ -17,6 +17,8 @@ import com.imucreative.jetpackmoviecatalogue.ui.detail.DetailActivity;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.imucreative.jetpackmoviecatalogue.utils.Constant.IMAGE_URL;
+
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHolder> {
 
     private final MovieFragmentCallback callback;
@@ -72,6 +74,8 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
                 movies.setDate(movieEntity.getDate());
                 movies.setTvShow(movieEntity.isTvShow());
                 movies.setImagePath(movieEntity.getImagePath());
+                movies.setImageBackdropPath(movieEntity.getImageBackdropPath());
+                movies.setVoteCount(movieEntity.getVoteCount());
 
                 Intent moveWithObjectIntent = new Intent(itemView.getContext(), DetailActivity.class);
                 moveWithObjectIntent.putExtra(DetailActivity.EXTRA_DETAIL, movies);
@@ -81,7 +85,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
             binding.imgShare.setOnClickListener(v -> callback.onShareClick(movieEntity));
             binding.imgFavorite.setOnClickListener(v -> callback.onFavoriteClick(movieEntity));
             Glide.with(itemView.getContext())
-                    .load(movieEntity.getImagePath())
+                    .load(IMAGE_URL + "/" + movieEntity.getImagePath())
                     .apply(RequestOptions.placeholderOf(R.drawable.ic_loading).error(R.drawable.ic_error))
                     .into(binding.imgPoster);
         }

@@ -19,8 +19,7 @@ import com.imucreative.jetpackmoviecatalogue.data.MovieEntity;
 import com.imucreative.jetpackmoviecatalogue.databinding.FragmentMovieBinding;
 import com.imucreative.jetpackmoviecatalogue.ui.movie.MovieAdapter;
 import com.imucreative.jetpackmoviecatalogue.ui.movie.MovieFragmentCallback;
-
-import java.util.List;
+import com.imucreative.jetpackmoviecatalogue.viewmodel.ViewModelFactory;
 
 public class TvShowFragment extends Fragment implements MovieFragmentCallback {
 
@@ -36,11 +35,18 @@ public class TvShowFragment extends Fragment implements MovieFragmentCallback {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         if (getActivity() != null) {
-            TvShowViewModel viewModel = new ViewModelProvider(this, new ViewModelProvider.NewInstanceFactory()).get(TvShowViewModel.class);
-            List<MovieEntity> movies = viewModel.getTvShow();
+            ViewModelFactory factory = ViewModelFactory.getInstance(getActivity());
+            TvShowViewModel viewModel = new ViewModelProvider(this, factory).get(TvShowViewModel.class);
 
             MovieAdapter movieAdapter = new MovieAdapter(this);
-            movieAdapter.setMovies(movies);
+
+            fragmentMovieBinding.progressBar.setVisibility(View.VISIBLE);
+            viewModel.getTvShow().observe(requireActivity(), courses -> {
+                fragmentMovieBinding.progressBar.setVisibility(View.GONE);
+                movieAdapter.setMovies(courses);
+                movieAdapter.notifyDataSetChanged();
+            }
+            );
 
             fragmentMovieBinding.rvMovie.setLayoutManager(new LinearLayoutManager(getContext()));
             fragmentMovieBinding.rvMovie.setHasFixedSize(true);
