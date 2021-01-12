@@ -2,6 +2,9 @@ package com.imucreative.jetpackmoviecatalogue.data.source.remote;
 
 import android.os.Handler;
 
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
+
 import com.imucreative.jetpackmoviecatalogue.data.source.remote.response.MovieResponse;
 import com.imucreative.jetpackmoviecatalogue.utils.EspressoIdlingResource;
 import com.imucreative.jetpackmoviecatalogue.utils.JsonHelper;
@@ -27,20 +30,28 @@ public class RemoteDataSource {
         return INSTANCE;
     }
 
-    public void getAllMovies(final LoadMoviesCallback callback) {
+    public LiveData<ApiResponse<List<MovieResponse>>> getAllMovies() {
         EspressoIdlingResource.increment();
+        MutableLiveData<ApiResponse<List<MovieResponse>>> movieResponses = new MutableLiveData<>();
         handler.postDelayed(()-> {
-            callback.onAllMoviesReceived(jsonHelper.loadMovies());
-            EspressoIdlingResource.decrement();
+            movieResponses.setValue(ApiResponse.success(jsonHelper.loadMovies()));
+            if (!EspressoIdlingResource.getEspressoIdlingResource().isIdleNow()) {
+                EspressoIdlingResource.decrement();
+            }
         }, SERVICE_LATENCY_IN_MILLIS);
+        return movieResponses;
     }
 
-    public void getAllTvShow(final LoadTvShowCallback callback) {
+    public LiveData<ApiResponse<List<MovieResponse>>> getAllTvShow() {
         EspressoIdlingResource.increment();
+        MutableLiveData<ApiResponse<List<MovieResponse>>> tvShowResponses = new MutableLiveData<>();
         handler.postDelayed(() -> {
-            callback.onAllTvShowsReceived(jsonHelper.loadTvShow());
-            EspressoIdlingResource.decrement();
+            tvShowResponses.setValue(ApiResponse.success(jsonHelper.loadTvShow()));
+            if (!EspressoIdlingResource.getEspressoIdlingResource().isIdleNow()) {
+                EspressoIdlingResource.decrement();
+            }
         }, SERVICE_LATENCY_IN_MILLIS);
+        return tvShowResponses;
     }
 
     public interface LoadMoviesCallback {

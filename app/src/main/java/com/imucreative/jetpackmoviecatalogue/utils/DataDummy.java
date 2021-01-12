@@ -1,6 +1,6 @@
 package com.imucreative.jetpackmoviecatalogue.utils;
 
-import com.imucreative.jetpackmoviecatalogue.data.MovieEntity;
+import com.imucreative.jetpackmoviecatalogue.data.source.local.entity.MovieEntity;
 
 import java.util.ArrayList;
 import java.util.List;

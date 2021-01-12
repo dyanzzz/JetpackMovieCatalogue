@@ -15,4 +15,13 @@
     <string name="vote">Vote</string>
     <string name="release">Release</string>
     <string name="score_detail">Score Detail</string>
+    <string name="favorite_movie">Favorite Movie</string>
+    <string name="favorite_tv_show">Favorite Tv Show</string>
+    <string name="like_this">Like this</string>
+    <string name="favorite">Favorite</string>
+    <string name="i_like_this">I Like This Movie</string>
+    <string name="i_dislike_this">I Dislike This Movie</string>
+    <string name="something_wrong">Something Wrong</string>
+    <string name="popularity">Popularity</string>
+    <string name="language">Language</string>
 </resources>

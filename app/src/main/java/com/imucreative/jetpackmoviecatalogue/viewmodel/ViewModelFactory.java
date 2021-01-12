@@ -9,6 +9,8 @@ import androidx.lifecycle.ViewModelProvider;
 import com.imucreative.jetpackmoviecatalogue.data.source.MovieRepository;
 import com.imucreative.jetpackmoviecatalogue.di.Injection;
 import com.imucreative.jetpackmoviecatalogue.ui.detail.DetailViewModel;
+import com.imucreative.jetpackmoviecatalogue.ui.favorite.movie.FavoriteMovieViewModel;
+import com.imucreative.jetpackmoviecatalogue.ui.favorite.tvshow.FavoriteTvShowViewModel;
 import com.imucreative.jetpackmoviecatalogue.ui.movie.MovieViewModel;
 import com.imucreative.jetpackmoviecatalogue.ui.tvshow.TvShowViewModel;
 
@@ -43,6 +45,10 @@ public class ViewModelFactory extends ViewModelProvider.NewInstanceFactory {
             return (T) new TvShowViewModel(mMovieRepository);
         } else if (modelClass.isAssignableFrom(DetailViewModel.class)) {
             return (T) new DetailViewModel(mMovieRepository);
+        } else if (modelClass.isAssignableFrom(FavoriteMovieViewModel.class)) {
+            return (T) new FavoriteMovieViewModel(mMovieRepository);
+        } else if (modelClass.isAssignableFrom(FavoriteTvShowViewModel.class)) {
+            return (T) new FavoriteTvShowViewModel(mMovieRepository);
         }
 
         throw new IllegalArgumentException("Unknown ViewModel class: " + modelClass.getName());

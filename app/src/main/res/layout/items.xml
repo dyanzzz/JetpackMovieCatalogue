@@ -55,7 +55,7 @@
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="@+id/tv_item_title"
             app:layout_constraintTop_toBottomOf="@+id/tv_item_title"
-            tools:text="@string/dateline" />
+            tools:text="@string/date" />
 
         <TextView
             android:id="@+id/tv_item_description"

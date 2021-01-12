@@ -4,9 +4,10 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
 
-import com.imucreative.jetpackmoviecatalogue.data.MovieEntity;
+import com.imucreative.jetpackmoviecatalogue.data.source.local.entity.MovieEntity;
 import com.imucreative.jetpackmoviecatalogue.data.source.MovieRepository;
 import com.imucreative.jetpackmoviecatalogue.utils.DataDummy;
+import com.imucreative.jetpackmoviecatalogue.vo.Resource;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -15,7 +16,6 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -34,7 +34,7 @@ public class MovieViewModelTest {
     private MovieRepository movieRepository;
 
     @Mock
-    private Observer<List<MovieEntity>> observer;
+    private Observer<Resource<List<MovieEntity>>> observer;
 
     @Before
     public void setUp() {
@@ -44,12 +44,12 @@ public class MovieViewModelTest {
     @Test
     public void getMovies() {
 
-        List<MovieEntity> dummyCourses = DataDummy.getListData("movie");
-        MutableLiveData<List<MovieEntity>> courses = new MutableLiveData<>();
+        Resource<List<MovieEntity>> dummyCourses = Resource.success(DataDummy.getListData("movie"));
+        MutableLiveData<Resource<List<MovieEntity>>> courses = new MutableLiveData<>();
         courses.setValue(dummyCourses);
 
         when(movieRepository.getAllMovies()).thenReturn(courses);
-        List<MovieEntity> movieEntities = viewModel.getMovies().getValue();
+        List<MovieEntity> movieEntities = viewModel.getMovies().getValue().data;
         verify(movieRepository).getAllMovies();
         assertNotNull(movieEntities);
         assertEquals(12, movieEntities.size());

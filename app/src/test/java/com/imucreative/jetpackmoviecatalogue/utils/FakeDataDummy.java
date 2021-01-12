@@ -1,12 +1,10 @@
 package com.imucreative.jetpackmoviecatalogue.utils;
 
-import com.imucreative.jetpackmoviecatalogue.data.MovieEntity;
+import com.imucreative.jetpackmoviecatalogue.data.source.local.entity.MovieEntity;
 import com.imucreative.jetpackmoviecatalogue.data.source.remote.response.MovieResponse;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 public class FakeDataDummy {
 

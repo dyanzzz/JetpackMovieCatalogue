@@ -13,6 +13,7 @@ android {
         vectorDrawables.useSupportLibrary = true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", "BASE_URL_IMG", "\"http://image.tmdb.org/t/p/w500\""
     }
 
     buildTypes {
@@ -45,6 +46,7 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment:$navigation"
     implementation "androidx.navigation:navigation-ui:$navigation"
     implementation "androidx.legacy:legacy-support-v4:$legacy"
+    implementation "androidx.paging:paging-runtime:$pagingVersion"
 
     //testing
     implementation "androidx.test.espresso:espresso-idling-resource:$idleResourceVersion"

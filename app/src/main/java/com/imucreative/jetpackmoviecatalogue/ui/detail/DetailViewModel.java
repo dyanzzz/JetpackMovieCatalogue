@@ -3,13 +3,14 @@ package com.imucreative.jetpackmoviecatalogue.ui.detail;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.imucreative.jetpackmoviecatalogue.data.MovieEntity;
+import com.imucreative.jetpackmoviecatalogue.data.source.local.entity.MovieEntity;
 import com.imucreative.jetpackmoviecatalogue.data.source.MovieRepository;
+import com.imucreative.jetpackmoviecatalogue.vo.Resource;
 
 public class DetailViewModel extends ViewModel {
 
     private MovieRepository movieRepository;
-    private LiveData<MovieEntity> entity;
+    private LiveData<Resource<MovieEntity>> entity;
     private int id;
     private String type;
 
@@ -17,7 +18,7 @@ public class DetailViewModel extends ViewModel {
         this.movieRepository = movieRepository;
     }
 
-    LiveData<MovieEntity> getDetails() {
+    LiveData<Resource<MovieEntity>> getDetails() {
         switch (type) {
             case "movie":
                 entity = movieRepository.getMovieById(id);
@@ -40,8 +41,17 @@ public class DetailViewModel extends ViewModel {
     public String getType() {
         return type;
     }
-
     public void setType(String type) {
         this.type = type;
     }
+
+    public void setFavorite() {
+        if (entity.getValue() != null) {
+            MovieEntity movieEntity = entity.getValue().data;
+            if(movieEntity != null) {
+                movieRepository.setFavoriteStatus(movieEntity);
+            }
+        }
+    }
+
 }

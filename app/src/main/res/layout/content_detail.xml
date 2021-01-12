@@ -95,6 +95,39 @@
         app:layout_constraintTop_toTopOf="@+id/text_voters_detail_tv" />
 
     <TextView
+        android:id="@+id/text_popularity_detail_tv"
+        style="@style/Item"
+        android:layout_marginTop="8dp"
+        android:text="@string/popularity"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/img_poster"
+        app:layout_constraintTop_toBottomOf="@+id/text_voters_detail_tv" />
+
+
+    <TextView
+        android:id="@+id/text_popularity_detail"
+        style="@style/Item"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintStart_toEndOf="@+id/text_popularity_detail_tv"
+        app:layout_constraintTop_toTopOf="@+id/text_popularity_detail_tv" />
+
+    <TextView
+        android:id="@+id/text_language_detail_tv"
+        style="@style/Item"
+        android:layout_marginTop="8dp"
+        android:text="@string/language"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/img_poster"
+        app:layout_constraintTop_toBottomOf="@+id/text_popularity_detail_tv" />
+
+    <TextView
+        android:id="@+id/text_language_detail"
+        style="@style/Item"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintStart_toEndOf="@+id/text_language_detail_tv"
+        app:layout_constraintTop_toTopOf="@+id/text_language_detail_tv" />
+
+    <TextView
         android:id="@+id/txt_description"
         style="@style/Item.Description"
         android:paddingBottom="10dp"
@@ -103,21 +136,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/img_poster" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btn_favorite"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="10dp"
-        android:backgroundTint="#FFFFFF"
-        android:clickable="true"
-        android:focusable="true"
-        android:visibility="gone"
-        app:borderWidth="0dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_tag"
-        app:srcCompat="@drawable/ic_favorite_border" />
 
     <ProgressBar
         android:id="@+id/loading_detail"

@@ -1,5 +1,6 @@
 package com.imucreative.jetpackmoviecatalogue.ui.movie;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -15,13 +16,17 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.imucreative.jetpackmoviecatalogue.R;
-import com.imucreative.jetpackmoviecatalogue.data.MovieEntity;
+import com.imucreative.jetpackmoviecatalogue.data.source.local.entity.MovieEntity;
 import com.imucreative.jetpackmoviecatalogue.databinding.FragmentMovieBinding;
+import com.imucreative.jetpackmoviecatalogue.ui.detail.DetailActivity;
+import com.imucreative.jetpackmoviecatalogue.ui.main.MovieAdapter;
+import com.imucreative.jetpackmoviecatalogue.ui.main.MovieFragmentCallback;
 import com.imucreative.jetpackmoviecatalogue.viewmodel.ViewModelFactory;
 
-public class MovieFragment extends Fragment implements MovieFragmentCallback{
+public class MovieFragment extends Fragment implements MovieFragmentCallback {
 
     private FragmentMovieBinding fragmentMovieBinding;
+    private MovieViewModel viewModel;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -34,15 +39,29 @@ public class MovieFragment extends Fragment implements MovieFragmentCallback{
         super.onViewCreated(view, savedInstanceState);
         if (getActivity() != null) {
             ViewModelFactory factory = ViewModelFactory.getInstance(getActivity());
-            MovieViewModel viewModel = new ViewModelProvider(this, factory).get(MovieViewModel.class);
+            viewModel = new ViewModelProvider(this, factory).get(MovieViewModel.class);
 
             MovieAdapter movieAdapter = new MovieAdapter(this);
 
             fragmentMovieBinding.progressBar.setVisibility(View.VISIBLE);
-            viewModel.getMovies().observe(getViewLifecycleOwner(), courses -> {
-                fragmentMovieBinding.progressBar.setVisibility(View.GONE);
-                movieAdapter.setMovies(courses);
-                movieAdapter.notifyDataSetChanged();
+
+            viewModel.getMovies().observe(getViewLifecycleOwner(), movies -> {
+                if (movies != null) {
+                    switch (movies.status) {
+                        case LOADING:
+                            fragmentMovieBinding.progressBar.setVisibility(View.VISIBLE);
+                            break;
+                        case SUCCESS:
+                            fragmentMovieBinding.progressBar.setVisibility(View.GONE);
+                            movieAdapter.setMovies(movies.data);
+                            movieAdapter.notifyDataSetChanged();
+
+                            break;
+                        case ERROR:
+                            fragmentMovieBinding.progressBar.setVisibility(View.GONE);
+                            Toast.makeText(getContext(), getString(R.string.something_wrong), Toast.LENGTH_SHORT).show();
+                    }
+                }
             });
 
             fragmentMovieBinding.rvMovie.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -67,7 +86,29 @@ public class MovieFragment extends Fragment implements MovieFragmentCallback{
     @Override
     public void onFavoriteClick(MovieEntity movieEntity) {
         if (getActivity() != null) {
-            Toast.makeText(getActivity(), "I Like this movie "+movieEntity.getTitle(), Toast.LENGTH_SHORT).show();
+            viewModel.setFavorite(movieEntity);
         }
     }
+
+    @Override
+    public void onDetailClick(MovieEntity movieEntity) {
+        MovieEntity movies = new MovieEntity();
+        movies.setMovieId(movieEntity.getMovieId());
+        movies.setTitle(movieEntity.getTitle());
+        movies.setDescription(movieEntity.getDescription());
+        movies.setDate(movieEntity.getDate());
+        movies.setTvShow(movieEntity.getTvShow());
+        movies.setImagePath(movieEntity.getImagePath());
+        movies.setImageBackdropPath(movieEntity.getImageBackdropPath());
+        movies.setVoteCount(movieEntity.getVoteCount());
+        movies.setStatus(movieEntity.getStatus());
+        movies.setPopularity(movieEntity.getPopularity());
+        movies.setLanguage(movieEntity.getLanguage());
+
+        Intent moveWithObjectIntent = new Intent(getActivity(), DetailActivity.class);
+        moveWithObjectIntent.putExtra(DetailActivity.EXTRA_DETAIL, movies);
+        getActivity().startActivity(moveWithObjectIntent);
+    }
+
+
 }

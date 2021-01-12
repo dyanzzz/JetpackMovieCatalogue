@@ -1,14 +1,13 @@
 package com.imucreative.jetpackmoviecatalogue.ui.movie;
 
-import android.content.Context;
-
 import androidx.test.core.app.ActivityScenario;
 import androidx.test.espresso.IdlingRegistry;
+import androidx.test.espresso.action.ViewActions;
 import androidx.test.espresso.contrib.RecyclerViewActions;
 import androidx.test.rule.ActivityTestRule;
 
 import com.imucreative.jetpackmoviecatalogue.R;
-import com.imucreative.jetpackmoviecatalogue.data.MovieEntity;
+import com.imucreative.jetpackmoviecatalogue.data.source.local.entity.MovieEntity;
 import com.imucreative.jetpackmoviecatalogue.ui.main.MainActivity;
 import com.imucreative.jetpackmoviecatalogue.utils.DataDummy;
 import com.imucreative.jetpackmoviecatalogue.utils.EspressoIdlingResource;
@@ -24,6 +23,7 @@ import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static androidx.test.espresso.matcher.ViewMatchers.isRoot;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.allOf;
@@ -47,22 +47,29 @@ public class MovieTest {
 
     @Test
     public void loadMovie() {
-        onView(allOf(withId(R.id.rv_movie), isDisplayed()));
+        onView(withId(R.id.nav_movie)).perform(click());
         onView(allOf(isDisplayed(), withId(R.id.rv_movie))).perform(RecyclerViewActions.scrollToPosition(dummyMovie.size()));
     }
 
     @Test
     public void loadDetailMovie() {
+        onView(withId(R.id.nav_movie)).perform(click());
         onView(allOf(isDisplayed(), withId(R.id.rv_movie))).perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));
+        onView(withId(R.id.favorite_button)).perform(click());
         onView(allOf(withId(R.id.text_title), isDisplayed()));
         onView(allOf(withId(R.id.text_title), withText(dummyMovie.get(0).getTitle())));
         onView(allOf(withId(R.id.text_date), isDisplayed()));
-        onView(allOf(withId(R.id.text_date), withText(String.format("Date Release Movie %s", dummyMovie.get(0).getDate()))));
+        onView(allOf(withId(R.id.text_date), withText(dummyMovie.get(0).getDate())));
         onView(allOf(withId(R.id.text_voters_detail), isDisplayed()));
         onView(allOf(withId(R.id.text_voters_detail), withText(dummyMovie.get(0).getVoteCount())));
         onView(allOf(withId(R.id.txt_description), isDisplayed()));
         onView(allOf(withId(R.id.txt_description), withText(dummyMovie.get(0).getDescription())));
-        onView(allOf(withId(R.id.img_poster), isDisplayed()));
-        onView(allOf(withId(R.id.img_backdrop), isDisplayed()));
+        onView(allOf(withId(R.id.text_popularity_detail), isDisplayed()));
+        onView(allOf(withId(R.id.text_popularity_detail), withText((int) dummyMovie.get(0).getPopularity())));
+        onView(allOf(withId(R.id.text_language_detail), isDisplayed()));
+        onView(allOf(withId(R.id.text_language_detail), withText(dummyMovie.get(0).getLanguage())));
+        onView(withId(R.id.img_poster)).check(matches(isDisplayed()));
+        onView(withId(R.id.img_backdrop)).check(matches(isDisplayed()));
+        onView(isRoot()).perform(ViewActions.pressBack());
     }
 }
